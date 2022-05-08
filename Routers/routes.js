@@ -16,7 +16,7 @@ router.post('/upload/:path', downloadController.upload)
 router.get('/files/:category', downloadController.getFiles)
 
 router.post('/auth/register', authController.register)
-router.get('/auth/login', authController.login)
+router.post('/auth/login', authController.login)
 router.get('/auth/auth', authController.auth)
 
 router.post('/results', mailController.sendmail)
