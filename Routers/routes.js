@@ -5,7 +5,7 @@ const downloadController = require('../Controllers/DownloadControllers')
 const mailController = require('../Controllers/MailController')
 const authController = require('../Controllers/AuthController')
 
-router.get('/posts', postsController.getPosts)
+router.get('/posts/:offset', postsController.getPosts)
 router.get('/posts/:id', postsController.getPost)
 router.get('/posts/:id/delete', postsController.deletePost)
 router.post('/posts/create', postsController.createPost)
