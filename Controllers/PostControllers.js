@@ -39,11 +39,15 @@ class postsController {
     }
     async getPosts(req, res, next) {
         try {
-            if (req.params.offset == -1)
+            if (req.params.offset == -1){
                 const data = await fetchDB(`select * from posts order by id desc`)
-            else
+                res.send(data)
+            }
+            else{
                 const data = await fetchDB(`select * from posts order by id desc limit 5 offset ${req.params.offset}`)
-            res.send(data)
+                res.send(data)
+            }
+
         } catch (e) {
             console.log(e)
             res.send(e)
